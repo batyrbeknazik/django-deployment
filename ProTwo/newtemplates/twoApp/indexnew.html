@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static "css/mine.css" %}"/>
+<h1>Gello</h1>
+</head>
+<body>
+<div>
+    {% if access_records %}
+    <table>
+    <thead>
+    <th>Name</th>
+    <th>Date</th>
+    </thead>
+{% for acc in access_records %}
+    <tr>
+    <td>{{ acc.name }}</td>
+    <td>{{ acc.date }}</td>
+    </tr>
+{% endfor %}
+        {% else %}
+        <p>No access found</p>
+
+    {% endif %}
+
+</table>
+
+</div>
+
+</body>
+</html>

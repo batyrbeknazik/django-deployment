@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static "css/mine.css" %}">
+</head>
+<body>
+<h1>Hello mazafackers i am alive</h1>
+
+<div>
+    {% if access %}
+
+
+<ol>
+     {% for acc in access %}
+
+    <li>User info</li>
+
+     <ul    >
+
+    <li>{{ acc.name }} </li>
+  <li>{{ acc.lastname }}</li>
+  <li>{{ acc.email }}</li>
+    </ul>
+
+    {% endfor %}
+
+</ol>
+
+        {% else %}
+        <p>No access found</p>
+
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
